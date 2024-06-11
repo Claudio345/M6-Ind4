@@ -1,0 +1,32 @@
+.usuario-detalle-container {
+  display: flex;
+ 
+  margin-top: 5rem;
+}
+
+.usuario-imagen {
+  flex: 1 0 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.usuario-imagen img {
+  max-width: 100%;
+  height: auto;
+}
+
+.usuario-info {
+ flex: 1 0 50%;
+ padding: 20px;
+}
+
+.usuario-info h2 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+ }
+
+ .usuarioinfo p {
+  font-size: 1.2rem;
+  color: #555;
+ }

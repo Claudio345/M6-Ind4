@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <form action="{% url 'usuario:formulario' %}" method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="id_nombre" class="form-label">Nombre de usuario</label>
+        {{ form.nombre}}
+      </div>
+    
+      <div class="mb-3">
+        <label for="id_imagen" class="form-label">Imagen de Perfil</label>
+        {{ form.imagen}}
+      </div>
+    
+      <div class="mb-3">
+        <label for="id_telefono" class="form-label">Telefono de Contacto</label>
+        {{ form.telefono}}
+      </div>
+    
+      <div class="mb-3">
+        <label for="id_email" class="form-label">Email de contacto</label>
+        {{ form.email}}
+      </div>
+    
+      <div class="mb-3">
+        <label for="id_categoria" class="form-label">Categoria</label>
+        {{ form.categoria}}
+      </div>
+
+      <button type="submit" class="btn btn-success">Agregar usuario</button>
+  </form>
+{% endblock %}

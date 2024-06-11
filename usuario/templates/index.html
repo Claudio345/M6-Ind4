@@ -1,0 +1,39 @@
+{% extends 'layout.html'%}
+{% block content %}
+<h1>Lista de Usuarios</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Imagen de Perfil</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">telefono</th>
+      <th scope="col">Email</th>
+      <th scope="col">Categoria </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for usuario in usuarios %}
+
+    <tr>
+      <td>{{usuario.id}}</td>
+      <td>
+        <a href="{% url 'usuario:detail' usuario.id %}">
+          <img src="{{ usuario.imagen}}" alt="" width="50">
+        </a>
+      </td>
+      <td>{{ usuario.nombre }}</td>
+      <td>{{ usuario.telefono}}</td>
+      <td>{{ usuario.email}}</td>
+      <td>{{ usuario.categoria}}</td>
+    </tr>
+
+    {% endfor %}
+
+
+  </tbody>
+</table>
+
+<a href="{% url 'usuario:formulario' %}" class="btn btn-success">Agregar a un usuario</a>
+{% endblock %}
