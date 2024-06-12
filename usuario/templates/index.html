@@ -1,4 +1,4 @@
-{% extends 'layout.html'%}
+{% extends 'base_nav.html'%}
 {% block content %}
 <h1>Lista de Usuarios</h1>
 
@@ -27,6 +27,22 @@
       <td>{{ usuario.telefono}}</td>
       <td>{{ usuario.email}}</td>
       <td>{{ usuario.categoria}}</td>
+      <td>
+        <!-- begin: editar -->
+          <a href="{% url 'usuario:editar' usuario.id %}" class="btn btn-success">
+            <i class="fa fa-edit"></i>
+          </a>
+        <!-- end: editar -->
+
+        <!-- begin: delete-->
+        <form id="deleteForm-{{ usuario.id }}" method="POST" action="{% url 'usuario:eliminar' usuario.id %}" style="display: inline-block;">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">
+            <i class="fa fa-trash"></i>
+          </button>
+        </form>
+        <!-- end: delete-->
+      </td>
     </tr>
 
     {% endfor %}
